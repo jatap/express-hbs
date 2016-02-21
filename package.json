@@ -1,9 +1,13 @@
 {
   "name": "express-hbs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "./node_modules/.bin/pm2 restart bin/www",
+    "stop": "./node_modules/.bin/pm2 stop bin/www",
+    "status": "./node_modules/.bin/pm2 monit",
+    "gulp": "./node_modules/.bin/gulp",
+    "start-dev": "npm-run-all -p start gulp"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -12,7 +16,17 @@
     "express": "~4.13.1",
     "hbs": "~3.1.0",
     "morgan": "~1.6.1",
-    "node-sass-middleware": "0.8.0",
+    "pm2": "^1.0.1",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "foundation-sites": "^6.1.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-uglify": "^1.5.2",
+    "npm-run-all": "^1.5.1"
   }
 }
